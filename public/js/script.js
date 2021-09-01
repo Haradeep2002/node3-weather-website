@@ -4,7 +4,7 @@ const p = document.querySelector(".text")
 button.addEventListener('click',() => {
     const val = input.value
     p.innerHTML = "<i>loading...</i>"
-    fetch('http://localhost:3000/weather?address='+val).then( (response) => {
+    fetch('/weather?address='+val).then( (response) => {
         response.json().then((data) => {
             if(data.error)
                 p.innerHTML = "<b>Result:</b><br><br><i>"+data.error+".Try again!!</i>"
